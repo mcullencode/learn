@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ff79aa4-9681-4e77-b5db-de5c110d3063" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/59/14_exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/date_candles_gen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/59/23.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/learn$reddit_scrape___req.coverage" NAME="reddit scrape - req Coverage Results" MODIFIED="1545077978507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Reddit_Scrape" />
     <SUITE FILE_PATH="coverage/learn$sql_test.coverage" NAME="sql test Coverage Results" MODIFIED="1546180077137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Reddit_Scrape" />
+    <SUITE FILE_PATH="coverage/learn$23.coverage" NAME="23 Coverage Results" MODIFIED="1552704114392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/59" />
     <SUITE FILE_PATH="coverage/learn$5.coverage" NAME="5_6 Coverage Results" MODIFIED="1550422791418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/59" />
     <SUITE FILE_PATH="coverage/learn$10.coverage" NAME="10 Coverage Results" MODIFIED="1550682534895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/59" />
     <SUITE FILE_PATH="coverage/learn$Run.coverage" NAME="Run Coverage Results" MODIFIED="1544899052032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
@@ -31,35 +31,36 @@
           <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="1" />
-          <entry key="py" value="18" />
+          <entry key="py" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="Python" value="18" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="py" value="8542" />
+          <entry key="py" value="11678" />
           <entry key="txt" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="91" />
-          <entry key="Python" value="8542" />
+          <entry key="Python" value="11678" />
         </counts>
       </usages-collector>
     </session>
@@ -141,12 +142,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/date_candles_gen.py">
+        <entry file="file://$PROJECT_DIR$/59/23.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+            <state relative-caret-position="375">
+              <caret line="96" column="25" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
               <folding>
-                <marker date="1550747016528" expanded="true" signature="148:149" ph="..." />
+                <marker date="1552704114382" expanded="true" signature="146:151" ph="..." />
+                <marker date="1552704114382" expanded="true" signature="1065:1070" ph="..." />
+                <marker date="1552704114382" expanded="true" signature="2932:3269" ph="..." />
               </folding>
             </state>
           </provider>
@@ -184,6 +187,7 @@
         <option value="$PROJECT_DIR$/59/11_parallel.py" />
         <option value="$PROJECT_DIR$/59/14_exceptions.py" />
         <option value="$PROJECT_DIR$/date_candles_gen.py" />
+        <option value="$PROJECT_DIR$/59/23.py" />
       </list>
     </option>
   </component>
@@ -202,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,10 +213,16 @@
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="learn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learn" type="462c0819:PsiDirectoryNode" />
+              <item name="59" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,7 +248,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.11">
+  <component name="RunManager" selected="Python.23">
     <configuration name="10" type="PythonConfigurationType" factoryName="Python">
       <module name="learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -275,7 +284,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/59/10_enumerate.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/59/11_parallel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="23" type="PythonConfigurationType" factoryName="Python">
+      <module name="learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/python.app/Contents/MacOS/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/59" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/59/23.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -516,6 +547,7 @@
       <item itemvalue="Python.9" />
       <item itemvalue="Python.10" />
       <item itemvalue="Python.11" />
+      <item itemvalue="Python.23" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -549,7 +581,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -617,9 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <marker date="1544898806802" expanded="true" signature="12:17" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,6 +721,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/date_candles_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/59/14_exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -702,12 +738,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/date_candles_gen.py">
+    <entry file="file://$PROJECT_DIR$/59/23.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="375">
+          <caret line="96" column="25" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
           <folding>
-            <marker date="1550747016528" expanded="true" signature="148:149" ph="..." />
+            <marker date="1552704114382" expanded="true" signature="146:151" ph="..." />
+            <marker date="1552704114382" expanded="true" signature="1065:1070" ph="..." />
+            <marker date="1552704114382" expanded="true" signature="2932:3269" ph="..." />
           </folding>
         </state>
       </provider>
