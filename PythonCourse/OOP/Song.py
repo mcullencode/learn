@@ -4,7 +4,7 @@ class Song:
     
     Attributes:
         title (str): The title of the song
-        artist (Artist): An artist object representing the songs creator.
+        artist (str): name of songs creator.
         duration (int): The duration of the song in seconds. May be zero.
         """
     def __init__(self, title, artist, duration=0):
@@ -28,6 +28,12 @@ class Song:
 #
 # help(Song)
 
+    def get_title(self):
+        return self.title
+
+    name = property(get_title)
+
+
 
 
 class Album:
@@ -36,7 +42,7 @@ class Album:
     Attributes:
         name (str): name of album
         year (int) : The year was released
-        artist (artist): artist responsible for album.
+        artist (str): the name of the artist.
               if not specified the artist will default to an artist with the name
               "Various artists".
         tracks (List[Song]): A list of the songs on the album
@@ -50,7 +56,7 @@ class Album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various Artists")
+            self.artist = "Various Artists"
         else:
             self.artist = artist
 
@@ -60,16 +66,20 @@ class Album:
         """Adds a song to the track list
 
         Args:
-            song(Song): A song to add.
+            song(Song): the title of a song to add.
              position (Optional)[int]: If specified the song will be added to that position
                 in the track list -inserting it between other songs if necessary.
                 Otherwise, song will be added at end of the list
 
         """
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position, song)
+        song_found = find_object(song, self.tracks)
+        if song_found is None:
+            song_found = Song(song, self.artist)
+
+            if position is None:
+                self.tracks.append(song_found)
+            else:
+                self.tracks.insert(position, song_found)
 
 class Artist:
 
@@ -99,6 +109,9 @@ class Artist:
 
         self.albums.append(album)
 
+
+
+
         """the artist class has two data attributes. the string containing the artists name, and the list containing the album objects
         standard way to organise a record collection, with the albums by a particular group stored together.
         compilations albums where the songs are by varuous artists do complicate things.
@@ -107,6 +120,30 @@ class Artist:
         circular references like this are best avoided. will use adele as example. pythons pickle module can often cope with this type of nesting.
         in short, everything is referencing everything. and this is computationally heavy.
         """
+    def add_song(self, name, year, title):
+        """Add a new song to the collection of albums
+
+        This method will add the song to an album in the collection,
+        A new album will be created in the collection if it doesnt already exist
+
+        Args:
+            name (str): name of the album
+            year (int): year album producef
+            title (str): title of the song
+
+        """
+
+        album_found = find_object(name, self.albums)
+        if album_found is None:
+            print(name + " not found")
+            album_found = Album(name, year, self.name)
+        else:
+            print("Found album " + name)
+
+        album_found.add_song(title)
+
+
+
 
 
 def find_object(field, object_list):
@@ -118,8 +155,7 @@ def find_object(field, object_list):
 
 
 def load_data():
-    new_artist = None
-    new_album = None
+
     artist_list = []
 
     with open("albums.txt", "r") as albums:
@@ -128,35 +164,14 @@ def load_data():
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
             year_field = int(year_field)
             print("{}:{}:{}:{}".format(artist_field, album_field, year_field, song_field))
+
+            new_artist = find_object(artist_field, artist_list)
             if new_artist is None:
                 new_artist = Artist(artist_field)
                 artist_list.append(new_artist)
-            elif new_artist.name != artist_field:
-                # we've just read details for a new artist
-                # retrieve tje artist object if there is one
-                # otherwise create a new artist object and add it to the artist list.
-                new_artist = find_object(artist_field, artist_list)
-                if new_artist is None:
-                    new_artist = Artist(artist_field)
-                    artist_list.append(new_artist)
-                new_album = None
 
-            if new_album is None:
-                new_album = Album(album_field, year_field, new_artist)
-                new_artist.add_album(new_album)
-            elif new_album.name != album_field:
-                # just read a new album for the current artist,
-                # retrieve album object if there is one,
-                # otherwise create a new album object and store it in the artists collection
-                new_album = find_object(album_field, new_artist.albums)
-                if new_album is None:
-                    new_album = Album(album_field, year_field, new_artist)
-                    new_artist.add_album(new_album)
-
-      
-            #create a new song object and add it to the current album's collection
-            new_song = Song(song_field, new_artist)
-            new_album.add_song(new_song)
+            new_artist.add_song(album_field, year_field, song_field)
+            #print(new_album.__dict__)
 
 
     return artist_list
@@ -180,7 +195,9 @@ if __name__ == '__main__':
 
     create_checkfile(artists)
 
-
+# removing circular references. no need for song class to store an artist object anymore.
+# we now have a way to find an artist in the list if we know the artist name, using the find_object function
+# in addition, no need for album class to store artist object
 
 
 #if Artist, Album and Song classes were part of the standard python library, then this example is no different
@@ -192,7 +209,13 @@ if __name__ == '__main__':
 # its closely tied to encapsulation. e.g. we've encapsulated data with classses, but havent encapsulated methods very well.
 # encasulating methods means considering questions such as qhich object is best suited to dealing with this task
 # or where does responsibility for performing this function belong.
-# i.e. if a car breaks down, i will look for 
+# i.e. if a car breaks down, i will look for someone who encapsulate the knowledge of how to fix it. i.e. the mechanic. who possesses
+# the knowledge to fix.
+
+#in load data, it does all the work of parsing the data when it finds a new album. really though,
+# the object that knows most about albums, is the artists. and albums know all about songs]
+#so should encapsulate the methods for dealing with albums in the artist class and songs in the album class.
+#load data can delegate dealing to the appropriate class.
 
 
 
