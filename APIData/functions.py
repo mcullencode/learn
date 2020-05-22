@@ -3,11 +3,14 @@ import logging
 import json
 import datetime
 import os
+import requests
+import time
+
 from typing import List, NamedTuple, Optional, Tuple, Any, Dict
 from arguments import TimeRange
-import requests
 from datetime import datetime
-import logging
+
+
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -203,8 +206,8 @@ def get_candle_history(pair: str, tick_interval: str,
                 tohlcv_data_list = [new_ts, data_list[2], data_list[3], data_list[4], data_list[5], data_list[7]]
                 data_part[index] = tohlcv_data_list
 
-        except (NetworkError, ExchangeError) as e:
-            print(e)
+        except:
+            print('API complaint from too many requests')
             b = backoff_start + attempt
             if b > backoff_max:
                 b = backoff_max
@@ -212,7 +215,7 @@ def get_candle_history(pair: str, tick_interval: str,
             t = 2 ** b
             attempt += 1
             print('Paginator backing off for {} seconds'.format(t))
-            sleep(t)
+            time.sleep(t)
             continue
 
         # Because some exchange sort Tickers ASC and other DESC.

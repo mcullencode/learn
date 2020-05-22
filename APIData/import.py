@@ -31,7 +31,7 @@ days = 30
 #havent used alt pairs with this before but i think the format XRPZ19 etc would work.
 PAIRS = ["ETHUSD", "XBTUSD"]
 
-timeframes = ['5m', '1d']
+timeframes = ['1d']
 
 
 
